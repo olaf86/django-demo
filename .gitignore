@@ -1,3 +1,7 @@
+# Visual studio code
+.vscode
+
+# Python
 venv
 __pycache__
 staticfiles
