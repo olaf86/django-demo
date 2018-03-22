@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'sass_processor',
     'first'
 ]
 
@@ -123,6 +124,18 @@ USE_TZ = False
 
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'sass_processor.finders.CssFinder'
+]
+
+# django-sass-processor
+SASS_PROCESSOR_ROOT = STATIC_ROOT
+SASS_PRECISION = 8
 
 try:
     from .local_settings import *
