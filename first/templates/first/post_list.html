@@ -6,21 +6,29 @@
         <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-05+VJtAaH13TDtIHikH0vJFqCdHB4VPg9dYfcALIbTdOSDwSL299oJ173uQBedD5" crossorigin="anonymous">
         <!-- font awesome v4.7.0 -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-        <title>Hello, World!</title>
+        <!-- django-sass-processor -->
+        {% load sass_tags %}
+        <link href="{% sass_src 'sass/main.scss' %}" rel="stylesheet" type="text/css" />
+        <title>Olaf's Playground</title>
     </head>
     <body>
-        <div>
-            <h1><a href="">Django Girls Blog</a></h1>
+
+        <div class="container">
+            <div class="jumbotron">
+                <h1>おらふの遊び場～</h1>
+            </div>
         </div>
 
-        <div>
+        <div class="container">
+            <div class="card">
             {% for post in posts %}
-                <div>
-                        <h1><a href="">{{ post.title }}</a></h1>
-                        <p>公開日： {{ post.published_date }}</p>
-                        <p>{{ post.text|linebreaks }}</p>
+                <div class="card-body">
+                    <h5 class="card-title mb-3"><a href="">{{ post.title }}</a></h1>
+                    <p class="card-subtitile text-muted">公開日： {{ post.published_date }}</p>
+                    <p>{{ post.text|linebreaks }}</p>
                 </div>
             {% endfor %}
+            </div>
         </div>
 
     </body>
