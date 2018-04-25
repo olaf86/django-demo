@@ -11,5 +11,5 @@ def post_list(request):
     paginator = Paginator(all_post, 3)
 
     page = request.GET.get('p')
-    posts = paginator._get_page(page)
+    posts = paginator.get_page(page)
     return render(request, 'first/post_list.html', {'posts': posts})
