@@ -31,5 +31,23 @@
             </div>
         </div>
 
+        <div class="pagination">
+            <span class="step-links">
+                {% if posts.has_previous %}
+                    <a href="?p=1">&laquo; first</a>
+                    <a href="?p={{ posts.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+                </span>
+
+                {% if posts.has_next %}
+                    <a href="?p={{ posts.next_page_number }}">next</a>
+                    <a href="?p={{ posts.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+
     </body>
 </html>
