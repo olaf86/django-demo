@@ -53,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'DjangoSampleProject.urls'
@@ -133,6 +134,10 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'sass_processor.finders.CssFinder'
 ]
+# If you’d like gzip functionality enabled, add the following setting.
+# STATICFILES_STORAGE = [
+#     'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# ]
 
 # django-sass-processor
 SASS_PROCESSOR_ROOT = STATIC_ROOT
