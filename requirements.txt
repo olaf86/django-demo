@@ -24,7 +24,6 @@ mccabe==0.6.1
 psycopg2==2.7.3.2
 pylint==1.8.3
 pytz==2018.4
-pywin32==223
 rcssmin==1.0.6
 rjsmin==1.0.12
 six==1.11.0
