@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sass_processor',
     'first',
+    'chat',
     'channels'
 ]
 
@@ -76,6 +77,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'DjangoSampleProject.wsgi.application'
 ASGI_APPLICATION = 'DjangoSampleProject.routing.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('localhost', 6379)]
+        }
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
